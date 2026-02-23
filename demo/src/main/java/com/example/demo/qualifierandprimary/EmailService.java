@@ -7,6 +7,6 @@ public class EmailService implements MessageService {
 
     @Override
     public void sendMsg() {
-        System.out.println("message send through email");
+        System.out.println("message send through email service");
     }
 }
