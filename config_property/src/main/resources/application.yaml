@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config_property
+
+payment:
+  gateway:
+    url: https://ap.stripe.com
+    api-key: abc123
+    timeout: 5000
+
+app:
+  name: My-Application
+  version: 2.9.0
+  support_email: support@email.com
