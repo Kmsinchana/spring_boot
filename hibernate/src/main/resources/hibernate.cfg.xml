@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_db</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">1234</property>
+         <!--this is to show the sql commands-->
+        <property name="hibernate.show_sql">true</property>
+         <!-- we don't add the below config then the table will not be created by hibernate we have to create manually
+      by default it will be none and if we add create every time the application run the new table will be get created and it will override the data
+           so best option is update it will update the existing table not create again  -->
+<!--        <property name="hibernate.hbm2ddl.auto">update</property>-->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+    </session-factory>
+</hibernate-configuration>
