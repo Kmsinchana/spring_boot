@@ -94,4 +94,23 @@ public class DepartmentService {
         Department deletDepartment = departmentRepo.findById(id).orElseThrow(()-> new RuntimeException("the department not found"));
         departmentRepo.delete(deletDepartment);
     }
+
+    public List<Department> fetchTheDepartmentName(String name){
+        return departmentRepo.findByName(name);
+    }
+
+//    to fetch the department details with employee email
+    public List<Department> findDepartmentThroughEmployeeEmail(String email){
+        return departmentRepo.findByEmployeesEmail(email);
+    }
+
+//    to update a department
+    public int updateDepartmentEmail(Long id,String email){
+        return departmentRepo.updateDepartmentEmail(id,email);
+    }
+
+//    get all department
+    public List<Department> getAllDeptWithJpql(){
+        return departmentRepo.findAllDepartmentWithJoinFetch();
+    }
 }

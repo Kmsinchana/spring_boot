@@ -62,4 +62,8 @@ public class ProjectService {
         Project deleteProject = projectRepo.findById(id).orElseThrow(()-> new RuntimeException("the project not found"));
         projectRepo.delete(deleteProject);
     }
+
+    public List<Project> fetchTheInfixProjectName(String name){
+      return  projectRepo.findByNameContains(name);
+    }
 }

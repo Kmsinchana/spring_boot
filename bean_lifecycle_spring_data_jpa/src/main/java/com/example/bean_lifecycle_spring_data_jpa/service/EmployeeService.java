@@ -1,5 +1,6 @@
 package com.example.bean_lifecycle_spring_data_jpa.service;
 
+import com.example.bean_lifecycle_spring_data_jpa.dto.DeptCountDTO;
 import com.example.bean_lifecycle_spring_data_jpa.entity.Department;
 import com.example.bean_lifecycle_spring_data_jpa.entity.Employee;
 import com.example.bean_lifecycle_spring_data_jpa.repository.DepartmentRepo;
@@ -51,5 +52,24 @@ public class EmployeeService {
     public void deleteEmployee(Long id){
         Employee deleteEmployee = employeeRepo.findById(id).orElseThrow(()-> new RuntimeException("the employee not found"));
         employeeRepo.delete(deleteEmployee);
+    }
+
+    public boolean checkEmployeeEmailExistsOrNot(String email){
+        return employeeRepo.existsByEmail(email);
+    }
+
+//    find the employee by the department email
+    public List<Employee> fetchEmployeeDetailsFromDepartmentEmail(String email){
+        return employeeRepo.findByDepartmentEmail(email);
+    }
+
+//    fetching all employee name
+    public List<String> findAllEmployeeName(){
+        return employeeRepo.findALLEmployeeName();
+    }
+
+//    to fetch the employee count for each department
+    public  List<DeptCountDTO> findCountOfEmployee(){
+        return employeeRepo.findCountOfEmployeeInDepartment();
     }
 }

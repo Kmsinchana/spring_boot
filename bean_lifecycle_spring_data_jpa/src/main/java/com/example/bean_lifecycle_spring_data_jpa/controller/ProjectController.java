@@ -36,4 +36,9 @@ public class ProjectController {
     public void deleteProject(@PathVariable Long id){
         projectService.deleteProject(id);
     }
+
+    @GetMapping("/{infix}")
+    public List<Project> getProjectWhichNameContains(@PathVariable String infix){
+        return projectService.fetchTheInfixProjectName(infix);
+    }
 }

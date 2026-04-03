@@ -36,7 +36,7 @@ public class Department {
    @Column(unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "department" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
+    @OneToMany(mappedBy = "department" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonManagedReference("dept-emp")
 //    parent side (The parent side is the one that contains the collection.)
     private List<Employee> employees;
