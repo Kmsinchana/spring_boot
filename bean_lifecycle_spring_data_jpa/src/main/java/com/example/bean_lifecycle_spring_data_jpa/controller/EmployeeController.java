@@ -1,8 +1,10 @@
 package com.example.bean_lifecycle_spring_data_jpa.controller;
 
 
+import com.example.bean_lifecycle_spring_data_jpa.dto.DeptCountDTO;
 import com.example.bean_lifecycle_spring_data_jpa.entity.Employee;
 import com.example.bean_lifecycle_spring_data_jpa.service.EmployeeService;
+import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,5 +37,27 @@ public class EmployeeController {
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable Long id){
         employeeService.deleteEmployee(id);
+    }
+
+    @GetMapping("/employeeExists")
+//    IMP
+//    don't use @request body with get it will not pass the email value correctly, it pass incorrectly either use path variable or request param
+    public Boolean checkEmployeeExists(@RequestParam String email){
+        return employeeService.checkEmployeeEmailExistsOrNot(email);
+    }
+//    find the employee by the department email
+    @GetMapping("/deptemail/{email}")
+    public List<Employee> findEmployeeDetailsDetailsByDepartmentEmail(@PathVariable String email){
+        return employeeService.fetchEmployeeDetailsFromDepartmentEmail(email);
+    }
+//    find all employee name
+    @GetMapping("/getallname")
+    public List<String> findALLEmployeeName(){
+        return employeeService.findAllEmployeeName();
+    }
+
+    @GetMapping("/{getcount}")
+    public List<DeptCountDTO> countofemployee(){
+        return employeeService.findCountOfEmployee();
     }
 }
