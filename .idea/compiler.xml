@@ -6,15 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="AopAndTransaction" />
         <module name="profiling" />
+        <module name="hibernate" />
         <module name="demo" />
       </profile>
-      <profile name="Annotation profile for bean_lifecycle_spring_data_jpa" enabled="true">
+      <profile name="Annotation profile for config_property" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="config_property" />
+      </profile>
+      <profile name="Annotation profile for spring-boot-practice" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="bean_lifecycle_spring_data_jpa" />
       </profile>
@@ -22,7 +33,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AopAndTransaction" options="-parameters" />
       <module name="bean_lifecycle_spring_data_jpa" options="-parameters" />
+      <module name="config_property" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="profiling" options="-parameters" />
     </option>
