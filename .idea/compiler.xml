@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="verisioning_of_RestAPI" />
         <module name="AopAndTransaction" />
         <module name="profiling" />
         <module name="hibernate" />
         <module name="demo" />
+        <module name="Spring-MVC-Features" />
       </profile>
       <profile name="Annotation profile for config_property" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -34,10 +36,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AopAndTransaction" options="-parameters" />
+      <module name="Spring-MVC-Features" options="-parameters" />
       <module name="bean_lifecycle_spring_data_jpa" options="-parameters" />
       <module name="config_property" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="profiling" options="-parameters" />
+      <module name="verisioning_of_RestAPI" options="-parameters" />
     </option>
   </component>
 </project>

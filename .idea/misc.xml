@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/bean_lifecycle_spring_data_jpa/pom.xml" />
         <option value="$PROJECT_DIR$/AopAndTransaction/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-MVC-Features/pom.xml" />
       </list>
     </option>
   </component>
