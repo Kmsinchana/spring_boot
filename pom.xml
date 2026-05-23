@@ -14,5 +14,7 @@
         <module>bean_lifecycle_spring_data_jpa</module>
         <module>config_property</module>
         <module>profiling</module>
+        <module>Spring-MVC-Features</module>
+        <module>verisioning_of_RestAPI</module>
     </modules>
 </project>
